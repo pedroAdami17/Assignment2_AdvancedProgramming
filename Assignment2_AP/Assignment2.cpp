@@ -1,12 +1,29 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
+
+void fileReader(ifstream &someFile);
 
 int main()
 {
 	int menuChoice = 0;
 	int answer3 = 0, answer4 = 0;
 
+	ifstream inputFile;
+	inputFile.open("assignment2GameTextFile.txt");
+
+	if(inputFile.fail())
+	{
+		cout << "Error opening the file" << endl;
+	}
+	else
+	{
+		fileReader(inputFile);
+		inputFile.close();
+	}
+
+	
 	//output the menu and the welcome
 	cin >> menuChoice;
 
@@ -67,7 +84,13 @@ int main()
 	return 0;
 }
 
-class FileReader
+void fileReader(ifstream &someFile)
 {
-	
+	int numRead;
+
+	while(someFile >> numRead)
+	{
+		cout << numRead << endl;
+	}
+	cout << endl;
 };
