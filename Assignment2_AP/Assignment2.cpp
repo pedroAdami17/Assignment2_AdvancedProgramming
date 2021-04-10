@@ -9,123 +9,96 @@ void fileReader(ifstream &someFile);
 int main()
 {
 	int menuChoice = 0;
-	int answer3 = 0, answer4 = 0;
-	int chances = 3;
+	int answer3 = 0, answer4 = 0; 
+	int chances = 3; //set number of chances to 3.
+	int lineCounter = 0; // counter for the lines in the text folder
 	string answer1, answer2;
 	string line;
 	string command;
-	string leftOrRightPuzzle;
 	ifstream inputFile;
-	
-	//two-line commands use this model.
-	/*getline(cin, command);
-	if(command == "go right")
+
+	inputFile.open("assignment2GameTextFile.txt"); //open the text file
+
+	if(!inputFile)
 	{
-		cout << "hello" << endl;
-		do
-		{
-			cout << "noice" << endl;
-			chances--;
-		} while (chances > 0);
+		cout << "Error opening the file" << endl;
 	}
-	else if (command == "go left")
+	while ((lineCounter < 3) && inputFile.good())
 	{
-		cout << "oops" << endl;
-		return main();
-	}*/
-
-	do
+		getline(inputFile, line);
+		cout << line << endl;
+		lineCounter++;
+	}
+	//inputFile.close(); *****put it into the end of main
+	
+	getline(cin, command);
+	if (command == "play game" && lineCounter >= 3)
 	{
-		cout << "Enter 1 to play or 2 to if you want to leave." << endl;
-		cin >> menuChoice;
-
-		if (menuChoice == 1)
-		{
-			//ifstream inputFile;  ***Use a while loop to run until the line that I want***
-			//if (!inputFile)
-			//{
-			//	cout << "Error opening the file" << endl;
-			//}
-			//else
-			//{
-			//	fileReader(inputFile);
-			//	cout << fileReader;
-			//	inputFile.close();
-			//} //use maybe getline to print it line by line
-
-			cout << "You are Agent Robert, an elite agent who works for a secret organization." << endl;
-			cout << "Your objective is to get inside a building and hack a computer with dangerous informations." << endl;
-			cout << "Ok, you just got inside of the building and you have two options, go right or go left. \nWhich do you choose? (Enter go right or go left)" << endl;
-			cin >> command;
-			if (command == "go right")
-			{
-				cout << "Woosh, you were almost caught by a guard, but you entered a room." << endl;
-				cout << "The door locked and now you're stuck, but you see in a control panel: What is full of holes but still holds water?" << endl;
-				do
-				{
-					cin >> leftOrRightPuzzle;
-					if (leftOrRightPuzzle == "sponge")
-					{
-						cout << "Hello" << endl;
-						chances--;
-					}
-
-				} while (chances > 0);
-			}
+		inputFile.ignore();
+		while ((lineCounter <= 9) && inputFile.good())
+		{			
+			getline(inputFile, line);
+			cout << line << endl;
+			lineCounter++;
 		}
-		else if (menuChoice == 2)
-		{
-			exit(0);
-		}
-		else
-		{
-			cout << "Invalid number. Please enter either 1 or 2!" << endl;
-		}
-	} while (menuChoice > 2);
+		
+	}
+	else if (command == "exit game")
+	{
+		cout << "ok bye" << endl;
+		exit(0);
+	}
 
-	cout << "Ok, now enter answer1" << endl;
 	do
 	{
 		cin >> answer1;
-		if (answer1 == "umbrella")
+		if (answer1 == "umbrella" && lineCounter >= 9)
 		{
-			cout << "Nice job, you leaved the room and you are now in a hall and there is a guard coming into your way. Do you want to attack him or hide? Enter either attack him or go hide." << endl;
-			cout << "Ok, you knocked him out, hid his body into a locker and got inside another room." << endl;
-			cout << "You hid inside a room and was able to scape without anyone seeing you." << endl;
-			cout << "But it looks like you entered the wrong one and now have to scape." << endl;
-			cout << "You found a touch pad with the letters: sapsdorw. As an elite agent, you see that it is an anagram. Now you need to decode it and enter the correct secret word." << endl;
+			inputFile.ignore();
+			while ((lineCounter <= 16) && inputFile.good())
+			{
+				getline(inputFile, line);
+				cout << line << endl;
+				lineCounter++;
+			}
 		}
 		else
 		{
-			cout << "try again" << endl;
+			cout << "Wrong answer! Try again" << endl;
 		}
 	} while(answer1 != "umbrella");
 
 	do
 	{
 		cin >> answer2;
-		if (answer2 == "password")
+		if (answer2 == "password" && lineCounter >= 16)
 		{
-			cout << "Great job. Now you can see your final objective, the main computer. But in your way you see powerful lasers." << endl;
-			cout << "You were able to hack into the terminal with your phone and need to solve another puzzle to get access to the computer." << endl;
-			cout << "It seems that you need to find the missing number. It says: 1+4=5, 2+5=12, 3+6=21, 8+11=?." << "\nEnter the missing number now: " << endl;
+			inputFile.ignore();
+			while ((lineCounter <= 22) && inputFile.good())
+			{
+				getline(inputFile, line);
+				cout << line << endl;
+				lineCounter++;
+			}
 		}
 		else
 		{
 			cout << "Try again" << endl;
-
 		}
 	} while (answer2 != "password");
 
 	do
 	{
 		cin >> answer3;
-		if (answer3 == 96)
+		if (answer3 == 96 && lineCounter >= 22)
 		{
-			cout << "Nice job, now you need to get inside the computer, but it will not be easy. You will need to decode the final puzzle now." << endl;
-			cout << "You only have 3 chances here. If you exceed this number, alarms will go off and you will be captured" << endl;
-			cout << "The computer says: 5+3+2=151022, 9+2+4=183652, 8+6+3=482466, 5+4+5=202541, 7+2+5=?" << endl;
-			cout << "Enter your answer now: ";
+			inputFile.ignore();
+			while ((lineCounter <= 29) && inputFile.good())
+			{
+				getline(inputFile, line);
+				cout << line << endl;
+				lineCounter++;
+			}
 			
 		}
 		else
@@ -133,79 +106,61 @@ int main()
 			--chances;
 			cout << "Wrong answer, you have " << chances << " more chances!" << endl;
 		}
-	} while (chances > 0);
+	} while (answer3 != 96 && chances > 0);
 
-	if(chances <= 0)
+	if(chances == 0)
 	{
-		do
-		{
-			cout << "Would you like to go back to the main menu or close the game? (Enter 1 to go back or 2 to close the game) " << endl << endl;
-			cin >> menuChoice;
-
-			if (menuChoice == 1)
-			{
-				return main();
-			}
-			else if (menuChoice == 2)
-			{
-				exit(0);
-			}
-			else
-			{
-				cout << "Invalid number. Please enter either 1 or 2!" << endl;
-			}
-		} while (menuChoice > 2);
+		cout << "The alarm went off and dozens of guards surrounded the room. You were captured." << endl;
+		cout << "---------------------Game-Over---------------------" << endl << endl;
+		exit(0);
 	}
 
 	chances = 3;
+	
 	do
 	{
 		cin >> answer4;
-		if (answer4 == 143547)
+		if (answer4 == 143547 && lineCounter >= 26)
 		{
-			cout << "Amazing job, you were able to hack into it and extract all the information we needed. Thank you Agent." << endl;
+			inputFile.ignore();
+			while ((lineCounter <= 33) && inputFile.good())
+			{
+				getline(inputFile, line);
+				cout << line << endl;
+				lineCounter++;
+			}
 		}
 		else
 		{
-			cout << "The alarm went off and you were captured by the enemies" << endl;
-			cout << "------------------GAME-OVER------------------" << endl;
-			/*cout << "Would you like to try again? \nEnter 1 for yes, and 2 for no." << endl;
-			cin >> menuChoice;*/
+			--chances;
+			cout << "Try again. you have " << chances << " more chance(s)" << endl;
 		}
 	} while (chances > 0);
 
-	if (chances <= 0)
-	{
-		do
-		{
-			cout << "Would you like to go back to the main menu or close the game? (Enter 1 to go back or 2 to close the game) " << endl << endl;
-			cin >> menuChoice;
 
-			if (menuChoice == 1)
-			{
-				return main();
-			}
-			else if (menuChoice == 2)
-			{
-				exit(0);
-			}
-			else
-			{
-				cout << "Invalid number. Please enter either 1 or 2!" << endl;
-			}
-		} while (menuChoice > 2);
+	
+	if (chances == 0)
+	{
+		cout << "The alarm went off and dozens of guards surrounded the room. You were captured." << endl;
+		cout << "---------------------Game-Over---------------------" << endl << endl;
+		exit(0);
 	}
+	
+	inputFile.close();
 	
 	return 0;
 }
 
 void fileReader(ifstream &someFile)
 {
-	string numRead;
+	string textRead;
 
-	while(someFile >> numRead)
+	while(getline(someFile, textRead))
 	{
-		cout << numRead;
+		cout << textRead << endl;
 	}
 	cout << endl;
 };
+
+
+

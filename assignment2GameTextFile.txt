@@ -1,28 +1,33 @@
 Hello! Welcome to Top Spy!
-Press '1' to start the game.
-Press '2' to quit the game.
+Type "play game" to play
+Type "exit game" to quit
 
 You are Agent Robert, an elite agent who works for a secret organization.
 Your objective is to get inside a building and hack a computer with dangerous informations.
-Ok, you just got inside of the building and you have two options, go right or go left. Which do you choose? (Enter "go right" or "go left")
-Woosh, you almost got caught by a guard. Now to move on to the next room, you need to solve a charade to discover the door pasword.
+Ok, you found a back door with no security and got inside of the building. 
+You were fast enough to enter a room without anyone spotting you.
+But looks like that the door is locked and you need to solve a charade to discover the door pasword.
 The computer says: "What goes up when rain comes down?" 
 Enter your answer now: ***umbrella***
-Nice job, you leaved the room and you are now in a hall and there is a guard coming into your way. Do you want to attack him or hide? Type your choise.
-Ok, you knocked him out and hid his body into a locker and got inside another room. 
-You hid inside a room and was able to scape without anyone seeing you.
-But it looks like you entered the wrong one and now have to scape.
-You found a touchpad with the letters: sapsdorw. As an elite agent, you see that it is an anagram. Now you need to decode it and enter the correct password.
-Enter it now: ***password***
-Great job. Now you can see your final objective, the main computer. But in your way you see powerful lasers.
+Nice job, you found the right word left that room.
+You heard steps coming from the hallway  in front of you, so you went upstairs and hid inside a huge vault.
+The problem now is that someone just closed it, and you're stuck again. In the end of the vault you found a security pannel.
+Even though it is hard to read, you can see that the letters "sapsdorw" are written close to it.
+With that, you discover that it might be an anagram. Enter the correct secred word: ***password***
+Great job. You managed to open it. And it seems that you were lucky enough to go to the president's floor.
+Now you can see your final objective, the main computer. 
+But in your way you see powerful lasers.
 You were able to hack into the terminal with your phone and need to solve another puzzle to get access to the computer.
 It seems that you need to find the missing number. It says: 1+4=5, 2+5=12, 3+6=21, 8+11=?.
 Enter the missing number: ***96***
-Nice job, now you need to get inside the computer, but it will not be easy. You will need to decode the final puzzle now.
+Amazing, you deactivated all the lasers and got inside the room.
+Now you need to gain access to the computer, but it will not be easy. Looks like the passowrd can be found following a pattern.
+But take care, the computer has an advanced alarm system. 
+If you type the wrong answer, there will be dozens of guards surrounding the room. 
 The computer says: 5+3+2=151022, 9+2+4=183652, 8+6+3=482466, 5+4+5=202541, 7+2+5=?.
-But take care, the computer has an advanced alarm system, if you type the wrong answer, there will be dozens of guards surrounding the room. 
 Enter your answer now: 143547
-Great job. A rescue team is heading to you location now. 
+Great job. You managed to get everything we needed.
+*You go to the roof and a helicopter comes to take you home* 
  
 
 
